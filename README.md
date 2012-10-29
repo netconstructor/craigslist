@@ -3,7 +3,7 @@ Craigslist Scraper Challenge
 Welcome to your first Group Project! In this project, you will be building a Ruby application to improve the Craigslist search experience.
 
 Wouldn't it be great if you could send search requests to Craigslist from your command line and receive a daily email with a summary of the most relevant postings? Wish no more–let's build it!
----------
+
 ##Core Features
 Send a search request to Craigslist from your command line
 Scrape the search results page and save the data in a local database
