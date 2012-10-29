@@ -3,7 +3,7 @@ require 'open-uri'
 require 'dbsaver'
 
 class Posting
-  attr_reader :date_posted, :title, :price, :location, :category, :url, :time_posted
+  attr_reader :date_posted, :title, :price, :location, :url, :time_posted
   def initialize(url)
     @url           = url
     @scrape_result = scrape(url)
