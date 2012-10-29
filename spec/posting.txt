@@ -1,0 +1,163 @@
+HTTP/1.1 200 OK
+Connection: close
+Cache-Control: max-age=2592000, public
+Last-Modified: Mon, 29 Oct 2012 22:07:20 GMT
+Transfer-Encoding: chunked
+Date: Mon, 29 Oct 2012 22:07:20 GMT
+Vary: Accept-Encoding
+Content-Type: text/html; charset=iso-8859-1
+X-Frame-Options: Allow-From https://forums.craigslist.org
+Set-Cookie: cl_b=QshGAhUi4hGOZKy0hcjM-gcWfOI;path=/;domain=.craigslist.org;expires=Fri, 01-Jan-2038 00:00:00 GMT
+Server: Apache
+Expires: Wed, 28 Nov 2012 22:07:20 GMT
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Vintage Peugeot Road Bike - Great Condition</title>
+	<meta name="robots" content="NOARCHIVE,NOFOLLOW">
+	<link type="text/css" rel="stylesheet" media="all" href="http://www.craigslist.org/styles/craigslist.css?v=1f58e7ccb76e113ad05b9ed30e1a0afa">
+	
+    <!--[if lte IE 8]>
+		
+    <![endif]-->
+    <meta name="viewport" content="user-scalable=1;">
+</head>
+
+<body class="posting">
+
+<div class="bchead">
+<a id="ef" href="https://accounts.craigslist.org/eaf?postingID=3373453996&amp;token=U2FsdGVkX182MjQ3NjI0N9Fuj8pfeRREGKwSPJENmf-iRtaiyA_JiiZ9VktD_Ar1Sd6Ywdw7yD88mreuYow-TklfUCbXgCQe">email this posting to a friend</a> <a href="http://sfbay.craigslist.org/">SF bay area craigslist</a> &gt; <a href="http://sfbay.craigslist.org/eby/">east bay</a> &gt;  <a href="http://sfbay.craigslist.org/eby/sss/">for sale / wanted</a> &gt; <a href="http://sfbay.craigslist.org/eby/bik/">bicycles - by owner</a>
+</div>
+	<div id="flags">
+		<div id="flagMsg">
+			please flag with care: <a href="http://www.craigslist.org/about/help/flags_and_community_moderation">[?]</a>
+		</div>
+		<div id="flagChooser">
+			<br>
+			<a class="fl" id="flag16" href="/flag/?flagCode=16&amp;postingID=3373453996"
+				title="Wrong category, wrong site, discusses another post, or otherwise misplaced">
+				miscategorized</a>
+			<br>
+
+			<a class="fl" id="flag28" href="/flag/?flagCode=28&amp;postingID=3373453996"
+				title="Violates craigslist Terms Of Use or other posted guidelines">
+				prohibited</a>
+			<br>
+
+			<a class="fl" id="flag15" href="/flag/?flagCode=15&amp;postingID=3373453996"
+				title="Posted too frequently, in multiple cities/categories, or is too commercial">
+				spam/overpost</a>
+			<br>
+
+			<a class="fl" id="flag9" href="/flag/?flagCode=9&amp;postingID=3373453996"
+				title="Should be considered for inclusion in the Best-Of-Craigslist">
+				best of craigslist</a>
+			<br>
+		</div>
+	</div>
+
+<div id="tsb">
+			<em>Avoid scams and fraud by dealing locally!</em> Beware any deal involving Western Union, Moneygram, wire transfer, cashier check, money order, shipping, escrow, or any promise of transaction protection/certification/guarantee. <a href="http://www.craigslist.org/about/scams">More info</a></div>
+<h2>Vintage Peugeot Road Bike - Great Condition - $400 (albany / el cerrito)</h2>
+<hr>
+<span class="postingdate">Date: 2012-10-29,  2:57PM PDT</span><br>
+
+		<script type="text/javascript"><!--
+			var isPreview = "";
+var postingTitle = "Vintage Peugeot Road Bike - Great Condition - $400 (albany / el cerrito)";
+var bestOf = "";
+var postingURL = "http%3A%2F%2Fsfbay.craigslist.org%2Feby%2Fbik%2F3373453996.html";
+var displayEmail = "2dcfr-3373453996@sale.craigslist.org";
+
+		--></script>
+	
+
+<button id="reply_button">Reply to this post</button>
+
+<span id="replytext">Reply to:</span> <small><a href="mailto:2dcfr-3373453996@sale.craigslist.org?subject=Vintage%20Peugeot%20Road%20Bike%20-%20Great%20Condition%20-%20%24400%20(albany%20%2F%20el%20cerrito)&amp;body=%0A%0Ahttp%3A%2F%2Fsfbay.craigslist.org%2Feby%2Fbik%2F3373453996.html%0A">2dcfr-3373453996@sale.craigslist.org</a></small> <sup>[<a href="http://www.craigslist.org/about/help/replying_to_posts" target="_blank">Errors when replying to ads?</a>]</sup>
+<div id="returnemail"> </div>
+
+
+<hr>
+<br>
+<div id="userbody">
+I am selling my vintage Peugeot road bike. It is in great condition and has been stored inside over the years. <br>
+<br>
+Needs a new back tube. The tire is fine, just the tube.<br>
+Please email for any questions.<br>
+<br>
+Pick ups only.<script type="text/javascript">
+<!--
+	imgList = new Array("http://images.craigslist.org/3J83H53le5Gd5Q35J3catdf684cffdd2e16f6.jpg","http://images.craigslist.org/3Ea3Le3l95Lc5G85M4cat8e747c258c711f59.jpg","http://images.craigslist.org/3Kf3G63Lc5N75K55M1cat980483274a691eab.jpg");
+// -->
+</script>
+<br><br>
+<div class="iw">
+	<div id="ci">
+		<span><!--  --></span>
+		<img id="iwi" src="http://images.craigslist.org/3J83H53le5Gd5Q35J3catdf684cffdd2e16f6.jpg" alt="">
+	</div>
+	<div id="iwt">
+
+		
+					<div class="tn">
+						<a href="http://images.craigslist.org/3J83H53le5Gd5Q35J3catdf684cffdd2e16f6.jpg" title="1">
+							<img src="http://images.craigslist.org/thumb/3J83H53le5Gd5Q35J3catdf684cffdd2e16f6.jpg" alt="image 1">
+						</a>
+					</div>
+					<br>
+				
+					<div class="tn">
+						<a href="http://images.craigslist.org/3Ea3Le3l95Lc5G85M4cat8e747c258c711f59.jpg" title="2">
+							<img src="http://images.craigslist.org/thumb/3Ea3Le3l95Lc5G85M4cat8e747c258c711f59.jpg" alt="image 2">
+						</a>
+					</div>
+					<br>
+				
+					<div class="tn">
+						<a href="http://images.craigslist.org/3Kf3G63Lc5N75K55M1cat980483274a691eab.jpg" title="3">
+							<img src="http://images.craigslist.org/thumb/3Kf3G63Lc5N75K55M1cat980483274a691eab.jpg" alt="image 3">
+						</a>
+					</div>
+					<br>
+				
+	</div>
+</div>
+<!-- START CLTAGS -->
+<br>
+<ul class="blurbs">
+<li>it's NOT ok to contact this poster with services or other commercial interests</li></ul>
+<!-- END CLTAGS -->
+</div>
+
+<span class="postingidtext">PostingID: 3373453996<br></span>
+
+<br>
+
+<hr>
+<ul class="clfooter">
+	<li>Copyright &copy; 2012 craigslist, inc.</li>
+	<li><a href="http://www.craigslist.org/about/terms.of.use">terms of use</a></li>
+	<li><a href="http://www.craigslist.org/about/privacy_policy">privacy policy</a></li>
+	<li><a href="/forums/?forumID=8">feedback forum</a></li>
+</ul>
+
+
+		<script type="text/javascript"><!--
+			var pagetype = "posting";
+var pID = "3373453996";
+var wwwurl = "http://www.craigslist.org";
+
+		--></script>
+	
+<script type="text/javascript" src="http://www.craigslist.org/js/jquery-1.7.2.min.js?v=0abe7bd994c41a8d7ce4e51c21ccd97b"></script>
+<script type="text/javascript" src="http://www.craigslist.org/js/postings.js?v=42d5f549b28c48a0ee73c31c45a6ae70"></script>
+<script type="text/javascript" src="http://www.craigslist.org/js/formats.js?v=93ee8806ae892644d075791a1213fdeb"></script>
+
+
+
+
+</body>
+</html>
+
