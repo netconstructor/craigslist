@@ -1,0 +1,43 @@
+Requirements:
+
+1a. Build command line scraper
+1b. Enable parsing of results (HTML documents)
+2. Build SQLite database
+
+Classes:
+- SearchResult
+-- #search_term
+-- #postings
+--- returns posting objects
+-- #timestamp
+-- #category
+
+- Posting
+- #date_posted
+- #posting_title
+- #listing_price
+- #location
+- #category
+- #url
+
+Flow:
+User searches for search term (outside of program)
+Results are sent to parser
+Parser checks for duplicate results (?)
+Parser sends results to database handler
+Database checks for duplicate results
+Results are printed to console
+
+Database
+- search_results
+- postings
+
+
+## Example usage
+data_handler = DBHandler.new
+parser = Parser.new(data_handler)
+search_result = parser.scrape("<url>") #=> saves new SearchResult with Posting objects
+data_handler.save(search_result) #=> saves SearchResult with Posting objects to database
+
+## TODO:
+- Logic around duplicate results: In parser and db, or just db?
