@@ -4,7 +4,7 @@ require '../search_result.rb'
 require 'fakeweb'
 
 describe SearchResult do
-  before :each do
+  before :all do
     url = "http://sfbay.craigslist.org/search/sss?query=used+cars+honda+civic+2006&srchType=A&minAsk=&maxAsk="
     page = "./query_page.txt"
     FakeWeb.register_uri(:get, url, :response => page)
@@ -24,13 +24,15 @@ describe SearchResult do
 
   context "#query" do
     it "should parse url and return the search query" do
-      @search.query.should eq "used cars honda civic 2006"
+      @search.search_query.should eq "used cars honda civic 2006"
     end
   end
 
-  context "#parse_search_result" do
-    it "should populate the post_urls array with urls" do
-      expect {@search.parse_search_result}.to change {@search.post_urls.length}.from(0).to(3)
+  context "#post_objects" do
+    it "should create an array of post objects" do
+      # @search.parse_search_result
+      # @search.create_postings
+      @search.postings.first.should be_an_instance_of(Posting)
     end
   end
 

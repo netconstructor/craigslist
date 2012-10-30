@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'dbsaver'
+# require 'dbsaver'
 
 class Posting
   attr_reader :date_posted, :title, :price, :location, :url, :time_posted
@@ -15,7 +15,7 @@ class Posting
   end
 
   def save
-    DBSaver.save(self)
+    # DBSaver.save(self)
   end
 
   private

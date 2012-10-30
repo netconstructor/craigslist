@@ -1,35 +1,42 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require_relative 'posting.rb'
 
 
 class SearchResult
-  attr_reader :url, :time_scraped, :post_urls, :query
+  attr_reader :url, :time_scraped, :post_urls, :search_query, :postings
 
   def initialize(url)
     @url = url
     @time_scraped = Time.now
     @post_urls = []
+    @search_query = search_term
+    parse_search_result
+    populate_postings
   end
 
-  def query
-    @url.gsub(/.+query=(.+)&srchType.+/){
-      $1.split("+").join(" ")  }
+  def search_term
+    @url.gsub(/.+query=(.+)&srchType.+/){ $1.split("+").join(" ")  }
   end
 
- def parse_search_result
+  def save
+    DBSaver.save(self)
+  end
+
+  private
+  def populate_postings
+    @postings = @post_urls.reduce([]) {|postings,url| postings << Posting.new(url) }
+  end
+
+  def parse_search_result
     page = Nokogiri::HTML(open(url))
     page.css('p[class=row] a').each do |node|
-      if node['href'].length > 5
-        @post_urls << node['href']
-      end
+      @post_urls << node['href'] if node['href'].length > 5
     end
   end
 
 end
-
-
-
 
 
 
