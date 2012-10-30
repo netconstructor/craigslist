@@ -80,9 +80,9 @@
 <row name="updated_at" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
-<row name="user_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
+<row name="user_email" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default><relation table="users" row="email" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -104,7 +104,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="748" y="200" name="users">
+<table x="773" y="201" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -117,8 +117,8 @@
 <row name="updated_at" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
+<key type="UNIQUE" name="">
+<part>email</part>
 </key>
 </table>
 </sql>

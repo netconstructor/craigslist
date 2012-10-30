@@ -25,7 +25,8 @@ search_query VARCHAR(255) NOT NULL,
 search_url VARCHAR(255) NOT NULL,
 scraped_at DATETIME NOT NULL,
 created_at DATETIME NOT NULL,
-updated_at DATETIME NOT NULL
+updated_at DATETIME NOT NULL,
+user_id INTEGER
 );
 
 CREATE TABLE users
