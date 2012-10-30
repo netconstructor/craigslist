@@ -6,9 +6,10 @@ require_relative 'dbsaver.rb'
 
 
 class SearchResult
-  attr_reader :url, :time_scraped, :post_urls, :search_query, :postings
+  attr_reader :url, :time_scraped, :post_urls, :search_query, :postings, :email
 
-  def initialize(url)
+  def initialize(url,email)
+    @email = email
     @url = url
     @time_scraped = Time.now.strftime("%Y-%m-%d %H:%M:%S") #YYYY-MM-DD HH:MM:SS
     @post_urls = []
