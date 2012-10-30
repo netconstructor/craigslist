@@ -4,7 +4,10 @@ require '../search_result.rb'
 require 'fakeweb'
 
 describe SearchResult do
-  before :all do
+  before :each do
+    #Time cannot be stubbed in a before(:each)--it's a bug in RSpec
+    time = Time.new('2012', month=12, day=30, hour=12, min=30, sec=0)
+    Time.stub(:now).and_return(time)
     url = "http://sfbay.craigslist.org/search/sss?query=used+cars+honda+civic+2006&srchType=A&minAsk=&maxAsk="
     page = "./query_page.txt"
     FakeWeb.register_uri(:get, url, :response => page)
@@ -17,8 +20,8 @@ describe SearchResult do
       @search.url.should eq("http://sfbay.craigslist.org/search/sss?query=used+cars+honda+civic+2006&srchType=A&minAsk=&maxAsk=")
     end
 
-    it "should initialize time scraped" do
-      @search.time_scraped.should be_an_instance_of(Time)
+    it "should initialize with time scraped" do
+      @search.time_scraped.should eq("2012-12-30 12:30:00")
     end
   end
 
