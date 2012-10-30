@@ -19,7 +19,7 @@ class Posting
   end
 
   def scrape_title
-    result = @scrape_result.css('h2').text[/.*[\-]/] || @scrape_result.css('h2').text[/.*/]
+    result = @scrape_result.css('title').text
   end
 
   def scrape_price
@@ -37,8 +37,9 @@ class Posting
   end
 
   def scrape_location
-    result = @scrape_result.css('h2').text[/\(.+\)/] || 'none'
-    result.gsub(/[\(\)]/,'')
+    result = @scrape_result.css('h2').text.gsub(title, "")
+    result = result.match(/\(.+\)/) || 'none'
+    result[0].gsub(/[\(\)]/,'')
   end
 
   def date_and_time_unformatted
