@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
-<!-- Active URL: http://socrates.devbootcamp.com/sql -->
+<!-- Active URL: http://socrates.devbootcamp.com/sql.html -->
 <sql>
 <datatypes db="mysql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="241" y="249" name="postings">
+</datatypes><table x="202" y="213" name="postings">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -43,12 +43,9 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="price" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="location" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="category" null="1" autoincrement="0">
+<row name="location" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="url" null="1" autoincrement="0">
@@ -58,21 +55,33 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="search_results" row="id" />
 </row>
-<key type="PRIMARY" name="">
-<part>id</part>
+<row name="created_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<row name="updated_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="UNIQUE" name="">
+<part>url</part>
 </key>
 </table>
-<table x="678" y="248" name="search_results">
+<table x="421" y="186" name="search_results">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="search_term" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<row name="search_query" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="category" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<row name="search_url" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="timestamp" null="1" autoincrement="0">
+<row name="searched_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<row name="created_at" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<row name="updated_at" null="1" autoincrement="0">
 <datatype>TIMESTAMP</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
