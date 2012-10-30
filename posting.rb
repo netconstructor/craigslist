@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-# require 'dbsaver'
 
 class Posting
   attr_reader :date_posted, :title, :price, :location, :url, :time_posted
@@ -14,26 +13,22 @@ class Posting
     @location      = scrape_location
   end
 
-  def save
-    # DBSaver.save(self)
-  end
-
   private
   def scrape(url)
     Nokogiri::HTML(open(url))
   end
 
   def scrape_title
-    @scrape_result.css('h2').text[/.*[\-]/][0...-2]
+    result = @scrape_result.css('h2').text[/.*[\-]/] || @scrape_result.css('h2').text[/.*/]
   end
 
   def scrape_price
-    @scrape_result.css('h2').text[/\$\d+/]
+    @scrape_result.css('h2').text[/\$\d+/] || 'none'
   end
 
   def scrape_date_posted
     date_posted_messy = date_and_time_unformatted[0]
-    date_posted_messy[/\d{4}[-]\d{2}[-]\d{2}/]
+    date_posted_messy[/\d{4}[-]\d{2}[-]\d{2}/] ##YYYY-MM-DD
   end
 
   def scrape_time_posted
@@ -42,7 +37,8 @@ class Posting
   end
 
   def scrape_location
-    @scrape_result.css('h2').text[/\(.+\)/].gsub(/[\(\)]/,'')
+    result = @scrape_result.css('h2').text[/\(.+\)/] || 'none'
+    result.gsub(/[\(\)]/,'')
   end
 
   def date_and_time_unformatted

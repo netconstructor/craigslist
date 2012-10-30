@@ -2,6 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 require_relative 'posting.rb'
+require_relative 'dbsaver.rb'
 
 
 class SearchResult
@@ -9,7 +10,7 @@ class SearchResult
 
   def initialize(url)
     @url = url
-    @time_scraped = Time.now
+    @time_scraped = Time.now.strftime("%Y-%m-%d %H:%M:%S") #YYYY-MM-DD HH:MM:SS
     @post_urls = []
     @search_query = search_term
     parse_search_result
@@ -35,12 +36,7 @@ class SearchResult
       @post_urls << node['href'] if node['href'].length > 5
     end
   end
-
 end
-
-
-
-
 
 
 
