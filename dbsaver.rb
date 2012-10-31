@@ -48,11 +48,11 @@ module DBSaver
     ON search_result_postings.search_result_id=search_results.id
     JOIN users
     ON search_results.user_email=users.email
-    WHERE users.email='#{email}' AND search_results.search_query='#{query}' AND postings.created_at > users.emailed_at").map do |posting|
+    WHERE users.email='#{email}' AND search_results.search_query='#{query}'").map do |posting|
       Post.new(posting[0],posting[1],posting[2],posting[3])
     end
 
-    # # @db.execute("UPDATE users SET emailed_at=DATETIME('now') WHERE email='#{email}'")
+    
 
     # return results
   end
