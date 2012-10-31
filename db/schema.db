@@ -36,3 +36,6 @@ emailed_at DATETIME DEFAULT NULL,
 created_at DATETIME NOT NULL,
 updated_at DATETIME NOT NULL
 );
+
+INSERT INTO users (email, emailed_at, created_at, updated_at)
+VALUES ('kerrie.yee@gmail.com', DATETIME('now'),DATETIME('now'),DATETIME('now'));
