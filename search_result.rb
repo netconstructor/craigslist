@@ -18,7 +18,8 @@ class SearchResult
   end
 
   def search_term
-    @url.gsub(/.+query=(.+)&sr/){ $1.split("+").join(" ")  }
+    url_query = @url.split("query=")[1].split("&")[0]
+    url_query.gsub(/\+/, "\s")
   end
 
   def save
