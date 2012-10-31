@@ -17,7 +17,7 @@ describe Posting do
       end
       it "should have the correct time_posted" do
         # Change to test for DateTime
-        @post.time_posted.should eq('2:57PM PDT')
+        @post.time_posted.should eq('2:57PM')
       end
       it "should have the correct title" do
         @post.title.should eq("Vintage Peugeot Road Bike - Great Condition")
@@ -29,6 +29,5 @@ describe Posting do
         @post.location.should eq('albany / el cerrito')
       end
     end
-    it "saves attributes"
   end
 end

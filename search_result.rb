@@ -34,7 +34,7 @@ class SearchResult
   def parse_search_result
     page = Nokogiri::HTML(open(url))
     page.css('p[class=row] a').each do |node|
-      @post_urls << node['href'] if node['href'].length > 5
+      @post_urls << node['href'] if node['href'].include?('html')
     end
   end
 end

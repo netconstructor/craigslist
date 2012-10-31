@@ -27,13 +27,11 @@ class Posting
   end
 
   def scrape_date_posted
-    date_posted_messy = date_and_time_unformatted[0]
-    date_posted_messy[/\d{4}[-]\d{2}[-]\d{2}/] ##YYYY-MM-DD
+    date_and_time_unformatted[/\d{4}[-]\d{2}[-]\d{2}/]
   end
 
   def scrape_time_posted
-    time_posted_messy = date_and_time_unformatted[1]
-    time_posted_messy.strip
+    date_and_time_unformatted[/\d{1,2}:\d{2}[APM]*/]
   end
 
   def scrape_location
@@ -43,6 +41,6 @@ class Posting
   end
 
   def date_and_time_unformatted
-    @scrape_result.css('span.postingdate').text.split(',')
+    @scrape_result.css('span.postingdate').text
   end
 end
