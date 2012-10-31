@@ -40,6 +40,7 @@ module DBSaver
 
   def query_postings(email,query)
     open_database
+    results = []
     @db.execute("SELECT title,price,location,url
     FROM postings
     JOIN search_result_postings
@@ -48,16 +49,20 @@ module DBSaver
     ON search_result_postings.search_result_id=search_results.id
     JOIN users
     ON search_results.user_email=users.email
-    WHERE users.email='#{email}' AND search_results.search_query='#{query}' AND postings.created_at > users.emailed_at").map do |posting|
-      Post.new(posting[0],posting[1],posting[2],posting[3])
+    WHERE users.email='#{email}' AND search_results.search_query='#{query}' AND postings.created_at > users.emailed_at").each do |posting|
+      results << Post.new(posting[0],posting[1],posting[2],posting[3])
     end
+
+    @db.execute("UPDATE users SET emailed_at=DATETIME('now') WHERE email='#{email}'")
+
+    return results
   end
 
   def new_user(email)
     open_database
     if !user_exists?(email)
-      @db.execute("INSERT INTO users (email, emailed_at, created_at, updated_at)
-                  VALUES (?, DATETIME('now'),DATETIME('now'),DATETIME('now'))", email)
+      @db.execute("INSERT INTO users (email, created_at, updated_at)
+                  VALUES (?,DATETIME('now'),DATETIME('now'))", email)
     end
   end
 

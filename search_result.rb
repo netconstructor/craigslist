@@ -18,7 +18,7 @@ class SearchResult
   end
 
   def search_term
-    @url.gsub(/.+query=(.+)&srchType.+/){ $1.split("+").join(" ")  }
+    @url.gsub(/.+query=(.+)&sr/){ $1.split("+").join(" ")  }
   end
 
   def save

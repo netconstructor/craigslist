@@ -8,3 +8,6 @@ DBSaver::new_user(email)
 
 url = ARGV[1]
 SearchResult.new(url, email).save
+#
+# p email
+# p url
