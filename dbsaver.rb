@@ -7,16 +7,10 @@ module DBSaver
     open_database
     case search_result
     when SearchResult
-      # save_search_result(object) unless search_result_exists?(object)
       search_result_exists?(search_result) ? update_search_result_time(search_result) : save_search_result(search_result)
       save_postings(search_result)
     end
   end
-
-  # def update(object)
-  #   open_database
-  #   update_search_result(object)
-  # end
 
 
   private
@@ -28,13 +22,9 @@ module DBSaver
     @db.execute("UPDATE search_results SET updated_at=DATETIME('now') WHERE search_url='#{search_result.url}'")
   end
 
-  # def update_postings(posting)
-  #   @db.execute("UPDATE postings")
-  # end
-
   def save_search_result(search_result)
-    @db.execute("INSERT INTO search_results (search_query, search_url, scraped_at, created_at, updated_at, user_email)
-                VALUES (?, ?, ?, DATETIME('now'),DATETIME('now'), ?)", search_result_attributes(search_result))
+    @db.execute("INSERT INTO search_results (search_query, search_url, created_at, updated_at, user_email)
+                VALUES (?, ?, DATETIME('now'),DATETIME('now'), ?)", search_result_attributes(search_result))
   end
 
 
@@ -77,9 +67,8 @@ module DBSaver
   def search_result_attributes(search_result)
     search_query = search_result.search_query
     search_url   = search_result.url
-    scraped_at   = search_result.time_scraped
     email        = search_result.email
-    [search_query, search_url, scraped_at, email]
+    [search_query, search_url, email]
   end
 
   def posting_attributes(posting)
