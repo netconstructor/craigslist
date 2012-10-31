@@ -36,7 +36,7 @@ class Posting
 
   def scrape_location
     result = @scrape_result.css('h2').text.gsub(title, "")
-    result = result.match(/\(.+\)/) || 'none'
+    result = result.match(/\(.+\)/) or return 'none'
     result[0].gsub(/[\(\)]/,'')
   end
 
