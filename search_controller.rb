@@ -15,22 +15,6 @@ module SearchController
     users
   end
 
-#body =
-=begin
-  Search query1: Scraped @ Time scraped
-
-    Posting 1(title): Price, Location, URL
-    Posting 2(title): Price, Location, URL
-  ....
-
-  Search query2: Scraped @ Time scraped
-
-    Posting 1(title): Price, Location, URL
-    Posting 2(title): Price, Location, URL
-  ....
-
-=end
-
   def body(email)
     body = ""
     user_queries(email).each do |query|
@@ -44,10 +28,10 @@ module SearchController
     DBSaver.user_queries(email)
   end
 
-  def postings_formatted(email,query)
+  def postings_formatted(email,query) #query is coming in as a Struct object
     postings = ""
     DBSaver.query_postings(email,query.title).each do |posting|
-      postings << "#{posting.title}: #{posting.price}, #{posting.location}, #{posting.url}\n"
+      postings << "%s\nPrice: %s \tLocation: %s \n %s\n\n" % [posting.title, posting.price, posting.location, posting.url]
     end
     postings
   end

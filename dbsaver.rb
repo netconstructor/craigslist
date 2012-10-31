@@ -10,7 +10,7 @@ module DBSaver
   extend self
 
   def save(search_result)
-    open_database # unless db_open?
+    open_database
     case search_result
     when SearchResult
       search_result_exists?(search_result) ? update_search_result_time(search_result) : save_search_result(search_result)
@@ -24,19 +24,9 @@ module DBSaver
     end
   end
 
-  def new_search_results
-    # Return updated search_results
-    open_database
-    getting all the emails
-    rescraping all the queries per email
-    update_database
-  end
-
   def emails
-    # open_database
-    # @db.execute
-    # ("SELECT email FROM users")
-    ["murtaza7@gmail.com"]
+    open_database
+    @db.execute("SELECT email FROM users").flatten
   end
 
   def user_queries(email)
@@ -56,9 +46,23 @@ module DBSaver
     ON postings.id=search_result_postings.posting_id
     JOIN search_results
     ON search_result_postings.search_result_id=search_results.id
-    WHERE search_results.user_email='#{email}' AND search_results.search_query='#{query}'").map do |posting|
+    JOIN users
+    ON search_results.user_email=users.email
+    WHERE users.email='#{email}' AND search_results.search_query='#{query}' AND postings.created_at > users.emailed_at").map do |posting|
       Post.new(posting[0],posting[1],posting[2],posting[3])
     end
+  end
+
+  def new_user(email)
+    open_database
+    if !user_exists?(email)
+      @db.execute("INSERT INTO users (email, emailed_at, created_at, updated_at)
+                  VALUES (?, DATETIME('now'),DATETIME('now'),DATETIME('now'))", email)
+    end
+  end
+
+  def user_exists?(email)
+    @db.execute("SELECT * FROM users WHERE email='#{email}'").flatten.length > 0
   end
 
 
@@ -75,9 +79,6 @@ module DBSaver
     @db.execute("INSERT INTO search_results (search_query, search_url, created_at, updated_at, user_email)
                 VALUES (?, ?, DATETIME('now'),DATETIME('now'), ?)", search_result_attributes(search_result))
   end
-
-
-
 
   def search_result_urls_and_emails
     open_database
@@ -143,6 +144,8 @@ module DBSaver
      WHERE user_email='#{search_result.email}'
      AND search_url='#{search_result.url}'").flatten.last
   end
+
+
 
 end
 
