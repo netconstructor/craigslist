@@ -14,8 +14,6 @@ ActionMailer::Base.smtp_settings = {
 
 class Mailer < ActionMailer::Base
 
-
-
   def email_everyone
     users = SearchController::users
     users.each do |user|
@@ -46,5 +44,3 @@ end
 
 # user = search[0]
 # body = search[1]
-
-Mailer.email_everyone
