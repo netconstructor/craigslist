@@ -1,4 +1,5 @@
 require 'action_mailer'
+require './search_controller'
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
@@ -13,14 +14,24 @@ ActionMailer::Base.smtp_settings = {
 
 class Mailer < ActionMailer::Base
 
-  def daily_summary_email(user='lreadewinner@gmail.com', body='summary_email.txt')
+
+
+  def email_everyone
+    users = SearchController::users
+    users.each do |user|
+      daily_summary_email(user.email,user.body).deliver
+    end
+  end
+
+
+  def daily_summary_email(user, body)
     if !valid_email?(user)
       raise 'Invalid email'
     else
       mail  :to         => user,
             :from       => "scrapegoats.dbc@gmail",
             :subject    => "daily craigslist updates",
-            :body       => File.read(body)
+            :body       => body
     end
   end
 
@@ -36,4 +47,4 @@ end
 # user = search[0]
 # body = search[1]
 
-#Mailer.daily_summary_email(user, body).deliver
+Mailer.email_everyone
