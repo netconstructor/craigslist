@@ -1,0 +1,42 @@
+Completed 10/29/12:
+- SearchResult class
+- Posting class
+- DBSaver module
+- SQLite database
+
+To Do 10/30/12:
+- Fix database: Search results and postings should have many-to-many relationship, not one-to-many
+- Write tests for saving SearchResult and Posting objects to database
+- Plan feature: Summary email
+- Implement feature: Summary email
+- Plan feature: Multiple users
+- Implement feature: Multiple users
+
+##########################################
+
+FEATURE: Summary email
+- Use ActionMailer or Mail Gem to send daily summary email to user for all queries
+- Email content requirements:
+-- Search query link
+-- Posting titles
+-- Posting links
+-- Posting prices
+-- Latest scrape datetime
+
+- Functionality requirements:
+-- Only send new postings
+-- Deal with backlog of search results
+
+Tools and research topics:
+- Cron jobs
+- ActionMailer
+
+##########################################
+
+FEATURE: Multiple users
+
+#########################################
+
+class User
+#search_results
+#email
