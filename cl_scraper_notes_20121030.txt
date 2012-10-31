@@ -40,3 +40,11 @@ FEATURE: Multiple users
 class User
 #search_results
 #email
+
+# To Do
+- add Users table to db
+- replace Struct objects
+- fix DBSaver::emails method
+- feature: only send new postings (check date that user was last emailed)
+- cron job
+- interface
